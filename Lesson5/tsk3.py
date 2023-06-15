@@ -14,21 +14,15 @@ m_0 = 200
 n = 10
 a = 0.01
 
-"выбираем t- критерий, вручную вычисляем не смещенную дисперсию:"
-def disp(arr, avg):
-    newarr = np.float_(np.empty_like(cookies_arr))
-    for i in range(0, len(arr)):
-        newarr[i] = (cookies_arr[i] - avg) ** 2
-        square_dev_without = sum((newarr[i]) for i in range(0, len(arr))) / (len(arr) - 1)
+"выбираем t- критерий, вычисляем сигма:"
 
-    return square_dev_without
+sigma_n = math.sqrt(np.var(cookies_arr, ddof=1))
 
-"вычисляем сигма:"
-sigma_n = math.sqrt(disp(cookies_arr, avg_cookies))
+
 "вычисляем наблюдаемый t-критерий"
 t_n = (avg_cookies - m_0) / (sigma_n / math.sqrt(n))
 print(f"t_n = {t_n:.3},")
 
 "t_n = -1.07, при этом табличные значения критической области при двустороннем тестировании для вероятности" \
 " 0,005 и 0,995: -3,68; 3,68,"
-"наблюдаемый критерий Стьюдента лежит внутри этих значений, принимаем гипотезу H0"
+"наблюдаемый критерий Стьюдента лежит внутри этих значений,  гипотезу H0 не отвергаем"
