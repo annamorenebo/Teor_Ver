@@ -13,7 +13,7 @@ n1 = len(mothers)
 n2 = len(daughters)
 x_1 = np.mean(mothers)
 x_2 = np.mean(daughters)
-delta = x_1 - x_2
+delta = abs(x_1 - x_2)
 print(f"разность средних {delta:.3}")
 D1 = np.var(mothers, ddof=1)
 D2 = np.var(daughters, ddof=1)
