@@ -7,10 +7,10 @@
 import numpy as np
 import scipy.stats as stats
 import math
+
 gr1 = np.array([56, 60, 62, 55, 71, 67, 59, 58, 64, 67])
 gr2 = np.array([57, 58, 69, 48, 72, 70, 68, 71, 50, 53])
 gr3 = np.array([57, 67, 49, 48, 47, 55, 66, 51, 54])
-print(stats.kruskal(gr1,gr2,gr3))
+print(stats.kruskal(gr1, gr2, gr3))
 """KruskalResult(statistic=5.465564058257224, pvalue=0.0650380998590494)
 Статистически значимых различий между группами нет на уровне статистической значимости а = 0,05"""
-
